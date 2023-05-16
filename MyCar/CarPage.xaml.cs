@@ -21,23 +21,24 @@ namespace MyCar
     /// </summary>
     public partial class CarPage : Page
     {
-        
-        private Cars _currentCar = new Cars();
-        private Owner _currentOwner = new Owner();
-        private PageLogin _currentLogin = new PageLogin();
-
-        public CarPage()
+        int selectedId = 0;
+        public CarPage(int Id)
         {
             InitializeComponent();
+            selectedId = Id;           
+            UpdateCars(Id);
+        }
+
+        private void UpdateCars(int Id)
+        {          
             var currentCars = CarEntities.GetContext().Cars.ToList();
-            DataContext = _currentCar;
-            
-
-
-          
+            currentCars = currentCars.Where(c => c.OwnerId == Id).ToList();
             ListViewCar.ItemsSource = currentCars;
-            
+        }
 
+        private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -79,6 +80,16 @@ namespace MyCar
                 CarEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 ListViewCar.ItemsSource = CarEntities.GetContext().Cars.ToList();
             }
+        }
+
+        private void onLoad(object sender, RoutedEventArgs e)
+        {
+            UpdateCars(selectedId);
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -33,8 +33,8 @@
             <StackPanel Orientation="Horizontal" Margin="5">
                 <PasswordBox x:Name="secondpassword" Margin="342 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200" PasswordChanged="PassworBox_PasswordChanged"></PasswordBox>
             </StackPanel>
-            <Button Content="Создать" x:Name="BtnCreate" FontSize="30" FontFamily="Times New Roman" Width="150" Margin="5" Background="LightGreen" BorderBrush="Green" Click="BtnCreate_Click" IsEnabled="False"></Button>
-            <Button Content="Назад" x:Name="BtnBack" FontSize="30" FontFamily="Times New Roman" Width="150" Margin="5" Background="Blue" BorderBrush="DarkBlue" Foreground="White" Click="BtnBack_Click"></Button>
+            <Button Content="Создать" x:Name="BtnCreate" FontSize="20" FontFamily="Times New Roman" Width="150" Margin="5" Background="LightGreen" BorderBrush="Green" Click="BtnCreate_Click" IsEnabled="False"></Button>
+            <Button Content="Назад" x:Name="BtnBack" FontSize="20" FontFamily="Times New Roman" Width="150" Margin="5" Background="Blue" BorderBrush="DarkBlue" Foreground="White" Click="BtnBack_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

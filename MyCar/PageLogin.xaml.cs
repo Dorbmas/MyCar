@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,17 @@ namespace MyCar
         public PageLogin()
         {
             InitializeComponent();
+           
         }
+
+        //public delegate void TextValueChangedHandler(int selectedId);
+        //public event TextValueChangedHandler TextValueChanged;
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
-            {       
-                MainWindow mainWindow = new MainWindow();
+            {
+                int selectedId = 0;
                 var ownerObj = AppConnect.model0db.Owner.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Password);
                 if (ownerObj == null)
                 {
@@ -40,7 +45,19 @@ namespace MyCar
                 {
                     MessageBox.Show("Добро пожаловать, " + ownerObj.Name + "!",
                         "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                    mainWindow.Show();
+
+                    string textLogin = login.Text;
+                    var currentOwner = CarEntities.GetContext().Owner.ToList();
+                    currentOwner = currentOwner.Where(x => x.Login == login.Text).ToList();
+                    if (currentOwner.Count > 0)
+                    {
+                        selectedId = currentOwner[0].Id;
+                    }
+                                       
+                    MainWindow mainWindow = new MainWindow(selectedId);
+                    mainWindow.Show();                               
+                    Window.GetWindow(this).Close();
+                    
                 }
             }
             catch (Exception ex)
@@ -48,11 +65,12 @@ namespace MyCar
                 MessageBox.Show("Ошибка" + ex.Message.ToString() + "Критическая работа приложения!",
                     "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+            
         }
 
         private void BtnRegistration_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new PageCreateAcc());
         }
     }
 }

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MyCar"
       mc:Ignorable="d" 
+      Loaded="onLoad"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CarPage" IsVisibleChanged="Page_IsVisibileChanged">
 
@@ -16,7 +17,10 @@
         </Grid.RowDefinitions>
         <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" Name="BtnAdd" Click="BtnAdd_Click"></Button>
         <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" Name="BtnDelete" Click="BtnDelete_Click"></Button>
-        <ListView Grid.Row="1" x:Name="ListViewCar" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">
+        <!--<Button Content="Выход" Grid.Row="2" HorizontalAlignment="Center" Name="BtnExit" Click="BtnExit_Click"></Button>-->
+
+
+        <ListView Grid.Row="1" Name="ListViewCar" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
@@ -28,7 +32,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="70"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
-                            <RowDefinition Height="370"></RowDefinition>
+                            <RowDefinition Height="310"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Image Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">

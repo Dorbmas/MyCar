@@ -20,12 +20,19 @@ namespace MyCar
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private string textLogin;
+        private int selectedId1;
+        public MainWindow(int selectedId)
         {
             InitializeComponent();
-            MainFrame.Navigate(new CarPage());
+            selectedId1 = selectedId;
+            MainFrame.Navigate(new CarPage(selectedId1));
             Manager.MainFrame = MainFrame;
+            //textLogin = text;
+            
         }
+
+        public object PageLogin { get; internal set; }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -42,6 +49,17 @@ namespace MyCar
             {
                 BtnBack.Visibility= Visibility.Hidden;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarPage carPage = new CarPage(selectedId1);
+            MainFrame.Navigate(carPage);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
