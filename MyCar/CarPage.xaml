@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" Name="BtnAdd" Click="BtnAdd_Click"></Button>
         <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" Name="BtnDelete" Click="BtnDelete_Click"></Button>
-        <!--<Button Content="Выход" Grid.Row="2" HorizontalAlignment="Center" Name="BtnExit" Click="BtnExit_Click"></Button>-->
+        <Button Content="Выход" Grid.Row="2" HorizontalAlignment="Center" Name="BtnExit" Click="BtnExit_Click"></Button>
 
 
         <ListView Grid.Row="1" Name="ListViewCar" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">

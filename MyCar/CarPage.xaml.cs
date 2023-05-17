@@ -43,12 +43,12 @@ namespace MyCar
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new CarEditPage((sender as Button).DataContext as Cars));
+            Manager.MainFrame.Navigate(new CarEditPage((sender as Button).DataContext as Cars, selectedId));
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new CarEditPage(null));
+            Manager.MainFrame.Navigate(new CarEditPage(null, selectedId));
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -64,7 +64,9 @@ namespace MyCar
                     CarEntities.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
 
-                    ListViewCar.ItemsSource = CarEntities.GetContext().Cars.ToList();
+                    var currentCars = CarEntities.GetContext().Cars.ToList();
+                    currentCars = currentCars.Where(c => c.OwnerId == selectedId).ToList();
+                    ListViewCar.ItemsSource = currentCars;
                 }
                 catch (Exception ex)
                 {
@@ -89,7 +91,9 @@ namespace MyCar
 
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Window.GetWindow(this).Close();
         }
     }
 }

@@ -21,16 +21,18 @@ namespace MyCar
     public partial class CarEditPage : Page
     {
         private Cars _currentCar = new Cars();
-        public CarEditPage(Cars selectedCar)
+        int selectedId;
+        public CarEditPage(Cars selectedCar, int Id)
         {
             InitializeComponent();
 
             if (selectedCar != null)
                 _currentCar = selectedCar;
 
-            DataContext = _currentCar;
-        }
+            _currentCar.OwnerId = Id;
 
+            DataContext = _currentCar;           
+        }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -46,7 +48,7 @@ namespace MyCar
             {
                 MessageBox.Show(errors.ToString());
                 return;
-            }
+            }          
 
             if (_currentCar.Id == 0)
                 CarEntities.GetContext().Cars.Add(_currentCar);

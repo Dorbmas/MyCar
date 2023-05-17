@@ -20,7 +20,7 @@ namespace MyCar
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string textLogin;
+        //private string textLogin;
         private int selectedId1;
         public MainWindow(int selectedId)
         {
@@ -28,7 +28,7 @@ namespace MyCar
             selectedId1 = selectedId;
             MainFrame.Navigate(new CarPage(selectedId1));
             Manager.MainFrame = MainFrame;
-            //textLogin = text;
+            selectedId1 = selectedId;
             
         }
 
@@ -59,7 +59,7 @@ namespace MyCar
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            //Application.Current.Shutdown();
         }
     }
 }
