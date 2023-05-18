@@ -20,7 +20,7 @@
         <Button Content="Выход" Grid.Row="2" HorizontalAlignment="Center" Name="BtnExit" Click="BtnExit_Click"></Button>
 
 
-        <ListView Grid.Row="1" Name="ListViewCar" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">
+        <ListView Grid.Row="1" Name="ListViewCar" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" BorderBrush="White">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"></WrapPanel>
@@ -37,7 +37,9 @@
                         </Grid.RowDefinitions>
                         <Image Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">
                             <Image.Source>
-                                <Binding Path="correctPhoto"></Binding>
+                                <Binding Path="correctPhoto">
+                                    
+                                </Binding>
                             </Image.Source>
                         </Image>
                         <TextBlock Text="{Binding Mark}" VerticalAlignment="Center" TextAlignment="Center" Width="390"

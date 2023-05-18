@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+
 
 namespace MyCar
 {
@@ -20,6 +23,11 @@ namespace MyCar
     /// </summary>
     public partial class CarEditPage : Page
     {
+        private byte[] _mainImageData = null;
+        public string img = "emptycar.png";
+        public string path = System.IO.Path.Combine(Directory.GetParent(System.IO.Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName)).FullName, @"MyCar\Resources\");
+        public string selectedFileName;
+        public string extension = ".jpg";
         private Cars _currentCar = new Cars();
         int selectedId;
         public CarEditPage(Cars selectedCar, int Id)
@@ -61,6 +69,22 @@ namespace MyCar
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void MouseLeftButtonUp_Click(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = false;
+            ofd.Filter = "Resources | *.png; *.jpg; *.jpeg; *.gif";
+            if (ofd.ShowDialog() == true)
+            {       
+                img = System.IO.Path.GetFileName(ofd.FileName);
+                extension = System.IO.Path.GetExtension(img);
+                selectedFileName = ofd.FileName;
+                _mainImageData = File.ReadAllBytes(ofd.FileName);
+                PhotoService.Source = new ImageSourceConverter()
+                    .ConvertFrom(_mainImageData) as ImageSource;              
             }
         }
     }
