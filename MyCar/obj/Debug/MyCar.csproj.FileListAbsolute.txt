@@ -100,3 +100,5 @@ C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CoreCompileInputs
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.pdb
+C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\Properties\Resources.resx
+C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\Properties\Resources.Designer.cs

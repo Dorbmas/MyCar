@@ -40,7 +40,7 @@
         <TextBox Text="{Binding Horsepower}" Grid.Column="1" Grid.Row="5" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
         <TextBox Text="{Binding RegisterSign}" Grid.Column="1" Grid.Row="6" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
         <Image Source="{Binding correctPhoto}" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" MouseLeftButtonUp="MouseLeftButtonUp_Click" Name="PhotoService"></Image>
-        <!--<TextBox Text="{Binding Photo}" Grid.Column="1" Grid.Row="7" Height="30" Width="300" HorizontalAlignment="Left" Visibility="Hidden" Name="PhotoText"></TextBox>-->
+        <!--<Button Content="Добавить фото" Grid.Column="1" Grid.Row="7" Name="BtnAddPhoto" Click="BtnAddPhoto_Click"></Button>-->
         <TextBox Text="{Binding OwnerId}" Grid.Column="1" Grid.Row="8" Height="30" Width="300" HorizontalAlignment="Left" Name="ownerid" Visibility="Hidden"></TextBox>
         <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="8" Name="BtnSave" Click="BtnSave_Click"></Button>
     </Grid>

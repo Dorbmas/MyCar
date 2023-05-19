@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
+using System.Data.SqlClient;
 
 namespace MyCar
 {
@@ -25,7 +25,7 @@ namespace MyCar
     {
         private byte[] _mainImageData = null;
         public string img = "emptycar.png";
-        public string path = System.IO.Path.Combine(Directory.GetParent(System.IO.Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName)).FullName, @"MyCar\Resources\");
+        public string path = System.IO.Path.Combine(Directory.GetParent(System.IO.Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Resources\");
         public string selectedFileName;
         public string extension = ".jpg";
         private Cars _currentCar = new Cars();
@@ -74,18 +74,42 @@ namespace MyCar
 
         private void MouseLeftButtonUp_Click(object sender, MouseButtonEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = false;
-            ofd.Filter = "Resources | *.png; *.jpg; *.jpeg; *.gif";
-            if (ofd.ShowDialog() == true)
-            {       
-                img = System.IO.Path.GetFileName(ofd.FileName);
-                extension = System.IO.Path.GetExtension(img);
-                selectedFileName = ofd.FileName;
-                _mainImageData = File.ReadAllBytes(ofd.FileName);
-                PhotoService.Source = new ImageSourceConverter()
-                    .ConvertFrom(_mainImageData) as ImageSource;              
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Файлы изображения (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = System.IO.Path.GetFileName(filePath);
+
+                SaveFileNameToDatabase(fileName);
+
+                string destinationPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
+                File.Copy(filePath, destinationPath, true);
+
+                BitmapImage bitmap = new BitmapImage(new Uri(destinationPath));
+                PhotoService.Source = bitmap;
+            } 
+        }
+
+        private void SaveFileNameToDatabase(string fileName)
+        {
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB; Initial Catalog=MyCar; User ID=root; Password=";
+            string query = "INSERT INTO Cars (Photo) VALUES (@FileName)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FileName", fileName);
+
+                connection.Open();
+                command.ExecuteNonQuery();
             }
+        }
+
+        private void BtnAddPhoto_Click(object sender, RoutedEventArgs e)
+        {          
+            
         }
     }
 }
