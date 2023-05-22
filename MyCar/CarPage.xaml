@@ -35,12 +35,8 @@
                             <RowDefinition Height="310"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Image Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">
-                            <Image.Source>
-                                <Binding Path="correctPhoto">
-                                    
-                                </Binding>
-                            </Image.Source>
+                        <Image Source="{Binding correctPhoto}" Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">
+                            
                         </Image>
                         <TextBlock Text="{Binding Mark}" VerticalAlignment="Center" TextAlignment="Center" Width="390"
                                    TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="0"></TextBlock>
