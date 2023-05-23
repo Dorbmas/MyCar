@@ -35,12 +35,18 @@
                             <RowDefinition Height="310"></RowDefinition>
                             <RowDefinition Height="auto"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <Image Source="{Binding correctPhoto}" Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">
-                            
+                        <Image Width="400" Grid.Row="2" HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="Photo">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>Resources/emptycar.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>                           
                         </Image>
-                        <TextBlock Text="{Binding Mark}" VerticalAlignment="Center" TextAlignment="Center" Width="390"
+                        <TextBlock Text="{Binding nameMark}" x:Name="MarksText" VerticalAlignment="Center" TextAlignment="Center" Width="390"
                                    TextWrapping="Wrap" HorizontalAlignment="Center" Margin="5 5" FontSize="26" Grid.Row="0"></TextBlock>
-                        <TextBlock Text="{Binding Model}" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="{Binding nameModel}" x:Name="ModelsText" Grid.Row="1" Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="26" FontWeight="Bold"></TextBlock>
                         <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click" Grid.Row="3" HorizontalAlignment="Center"></Button>
                     </Grid>
                 </DataTemplate>

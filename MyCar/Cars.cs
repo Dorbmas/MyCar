@@ -11,34 +11,64 @@ namespace MyCar
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Cars
     {
         public int Id { get; set; }
-        public string Mark { get; set; }
-        public string Model { get; set; }
-        public string Color { get; set; }
+        public int MarkId { get; set; }
+        public int ModelId { get; set; }
+        public int ColorId { get; set; }
+        public int YearOfManufacture { get; set; }
+        public int TransmissionTypeId { get; set; }
         public string VIN { get; set; }
         public string Mileage { get; set; }
         public int Horsepower { get; set; }
         public string RegisterSign { get; set; }
         public int OwnerId { get; set; }
-        public string Photo { get; set; }
-        public string correctPhoto
+        public byte[] Photo { get; set; }
+
+        public string nameMark
         {
             get
             {
-                if (String.IsNullOrEmpty(Photo) || String.IsNullOrWhiteSpace(Photo))
-                {
-                    return "/Resources/emptycar.png";
-                }
-                else
-                {
-                    return $"/Resources/{Photo}";
-                }
+                var marks = CarEntities3.GetContext().Marks.ToList();
+                var mark = marks.Where(m => m.Id == MarkId).FirstOrDefault();
+                return mark.MarkName;                
+            }
+        }
+        public string nameModel
+        {
+            get
+            {
+                var models = CarEntities3.GetContext().Models.ToList();
+                var model = models.Where(m => m.Id == ModelId).FirstOrDefault();
+                return model.ModelName;
+            }
+        }
+        public string nameColor
+        {
+            get
+            {
+                var colors = CarEntities3.GetContext().Colors.ToList();
+                var color = colors.Where(m => m.Id == ColorId).FirstOrDefault();
+                return color.ColorName;
+            }
+        }
+        public string nameTransmissionType
+        {
+            get
+            {
+                var transmissiontypes = CarEntities3.GetContext().TransmissionTypes.ToList();
+                var transmissiontype = transmissiontypes.Where(m => m.Id == TransmissionTypeId).FirstOrDefault();
+                return transmissiontype.TransmissionTypeName;
             }
         }
 
+        public virtual Colors Colors { get; set; }
+        public virtual Marks Marks { get; set; }
+        public virtual Models Models { get; set; }
         public virtual Owner Owner { get; set; }
+        public virtual TransmissionTypes TransmissionTypes { get; set; }
     }
 }

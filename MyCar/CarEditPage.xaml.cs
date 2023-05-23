@@ -36,18 +36,22 @@ namespace MyCar
 
             _currentCar.OwnerId = Id;
 
-            DataContext = _currentCar;           
+            DataContext = _currentCar;
+
+            ComboMarks.ItemsSource = CarEntities3.GetContext().Marks.ToList();
+            ComboModels.ItemsSource = CarEntities3.GetContext().Models.ToList();
+            ComboColors.ItemsSource = CarEntities3.GetContext().Colors.ToList();
         }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
 
-            if (string.IsNullOrWhiteSpace(_currentCar.Model))
-                errors.AppendLine("Укажите модель");
-            if (string.IsNullOrWhiteSpace(_currentCar.Mark))
-                errors.AppendLine("Укажите марку");
-            if (string.IsNullOrWhiteSpace(_currentCar.Color))
-                errors.AppendLine("Укажите цвет");
+            //if (string.IsNullOrWhiteSpace(_currentCar.Model))
+            //    errors.AppendLine("Укажите модель");
+            //if (string.IsNullOrWhiteSpace(_currentCar.Mark))
+            //    errors.AppendLine("Укажите марку");
+            //if (string.IsNullOrWhiteSpace(_currentCar.Color))
+            //    errors.AppendLine("Укажите цвет");
 
             if (errors.Length > 0)
             {
@@ -56,11 +60,11 @@ namespace MyCar
             }          
 
             if (_currentCar.Id == 0)
-                CarEntities.GetContext().Cars.Add(_currentCar);
+                CarEntities3.GetContext().Cars.Add(_currentCar);
 
             try
             {
-                CarEntities.GetContext().SaveChanges();
+                CarEntities3.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена!");
             }
             catch (Exception ex)
@@ -71,19 +75,19 @@ namespace MyCar
 
         private void MouseLeftButtonUp_Click(object sender, MouseButtonEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Image (*.png, *.jpg, *.jpeg) |*.png; *.jpg; *.jpeg";
-            if (ofd.ShowDialog() == true)
-            {
-                _mainImageData = File.ReadAllBytes(ofd.FileName);
-                ofd.Multiselect = false;
-                PhotoService.Source = new ImageSourceConverter()
-                    .ConvertFrom(_mainImageData) as ImageSource;                
-                string photoName = System.IO.Path.GetFileName(ofd.FileName);
-                _currentCar.Photo = photoName;
-                path += photoName;
-                File.Copy(ofd.FileName, path);
-            }
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.Filter = "Image (*.png, *.jpg, *.jpeg) |*.png; *.jpg; *.jpeg";
+            //if (ofd.ShowDialog() == true)
+            //{
+            //    _mainImageData = File.ReadAllBytes(ofd.FileName);
+            //    ofd.Multiselect = false;
+            //    PhotoService.Source = new ImageSourceConverter()
+            //        .ConvertFrom(_mainImageData) as ImageSource;                
+            //    string photoName = System.IO.Path.GetFileName(ofd.FileName);
+            //    _currentCar.Photo = photoName;
+            //    path += photoName;
+            //    File.Copy(ofd.FileName, path);
+            //}
         }       
 
         private void BtnAddPhoto_Click(object sender, RoutedEventArgs e)

@@ -27,11 +27,12 @@ namespace MyCar
             InitializeComponent();
             selectedId = Id;           
             UpdateCars(Id);
+            
         }
 
         private void UpdateCars(int Id)
         {          
-            var currentCars = CarEntities.GetContext().Cars.ToList();
+            var currentCars = CarEntities3.GetContext().Cars.ToList();
             currentCars = currentCars.Where(c => c.OwnerId == Id).ToList();
             ListViewCar.ItemsSource = currentCars;
         }
@@ -60,11 +61,11 @@ namespace MyCar
             {
                 try
                 {
-                    CarEntities.GetContext().Cars.RemoveRange(carsForRemoving);
-                    CarEntities.GetContext().SaveChanges();
+                    CarEntities3.GetContext().Cars.RemoveRange(carsForRemoving);
+                    CarEntities3.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
 
-                    var currentCars = CarEntities.GetContext().Cars.ToList();
+                    var currentCars = CarEntities3.GetContext().Cars.ToList();
                     currentCars = currentCars.Where(c => c.OwnerId == selectedId).ToList();
                     ListViewCar.ItemsSource = currentCars;
                 }
@@ -79,8 +80,8 @@ namespace MyCar
         {
             if (Visibility == Visibility.Visible)
             {
-                CarEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                ListViewCar.ItemsSource = CarEntities.GetContext().Cars.ToList();
+                CarEntities3.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                ListViewCar.ItemsSource = CarEntities3.GetContext().Cars.ToList();
             }
         }
 

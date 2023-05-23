@@ -8,6 +8,6 @@ namespace MyCar
 {
     internal class AppConnect
     {
-        public static CarEntities model0db;
+        public static CarEntities3 model0db;
     }
 }

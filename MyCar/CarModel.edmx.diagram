@@ -4,10 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="082e5b4b3d22415f8914063b57f9db3a" Name="Diagram1">
+      <Diagram DiagramId="8de2d16916b64fa792274c792ee25c8e" Name="Diagram1">
         <EntityTypeShape EntityType="CarModel.Cars" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CarModel.Owner" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Colors" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Marks" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Models" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.Owner" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarModel.TransmissionTypes" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="CarModel.FK_Cars_Colors" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_Cars_Marks" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_Cars_Models" ManuallyRouted="false" />
         <AssociationConnector Association="CarModel.FK_Cars_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="CarModel.FK_Cars_TransmissionTypes" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

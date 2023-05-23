@@ -22,7 +22,7 @@ namespace MyCar
         public LoginWindow()
         {
             InitializeComponent();
-            AppConnect.model0db = new CarEntities();
+            AppConnect.model0db = new CarEntities3();
             Manager.MainFrame = FrmMain;
 
             FrmMain.Navigate(new PageLogin());

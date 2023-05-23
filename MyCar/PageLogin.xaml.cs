@@ -47,7 +47,7 @@ namespace MyCar
                         "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
                     string textLogin = login.Text;
-                    var currentOwner = CarEntities.GetContext().Owner.ToList();
+                    var currentOwner = CarEntities3.GetContext().Owner.ToList();
                     currentOwner = currentOwner.Where(x => x.Login == login.Text).ToList();
                     if (currentOwner.Count > 0)
                     {

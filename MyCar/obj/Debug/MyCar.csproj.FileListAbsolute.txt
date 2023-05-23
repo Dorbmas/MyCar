@@ -94,14 +94,10 @@ C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MainWindow.baml
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\PageCreateAcc.baml
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\PageLogin.baml
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.g.resources
-C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.Properties.Resources.resources
-C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.GenerateResource.cache
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CoreCompileInputs.cache
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.pdb
-C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\Properties\Resources.resx
-C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\Properties\Resources.Designer.cs
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\bin\Debug\MyCar.exe.config
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\bin\Debug\MyCar.exe
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\bin\Debug\MyCar.pdb
