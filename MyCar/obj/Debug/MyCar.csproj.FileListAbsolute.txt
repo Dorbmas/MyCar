@@ -74,7 +74,6 @@ C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.xml
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.AssemblyReference.cache
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.SuggestedBindingRedirects.cache
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarEditPage.g.cs
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarPage.g.cs
@@ -130,3 +129,4 @@ C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.csproj.CoreCom
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.pdb
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.AssemblyReference.cache

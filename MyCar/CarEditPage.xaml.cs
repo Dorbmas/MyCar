@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Data;
 
 namespace MyCar
 {
@@ -23,10 +26,9 @@ namespace MyCar
     /// </summary>
     public partial class CarEditPage : Page
     {
-        private byte[] _mainImageData = null;
+        byte[] imageData;
         public string path = System.IO.Path.Combine(Directory.GetParent(System.IO.Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Resources\");
-        private Cars _currentCar = new Cars();
-        int selectedId;
+        private Cars _currentCar = new Cars();       
         public CarEditPage(Cars selectedCar, int Id)
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace MyCar
             ComboMarks.ItemsSource = CarEntities3.GetContext().Marks.ToList();
             ComboModels.ItemsSource = CarEntities3.GetContext().Models.ToList();
             ComboColors.ItemsSource = CarEntities3.GetContext().Colors.ToList();
+            ComboTransmissionTypes.ItemsSource = CarEntities3.GetContext().TransmissionTypes.ToList();
         }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
@@ -62,15 +65,15 @@ namespace MyCar
             if (_currentCar.Id == 0)
                 CarEntities3.GetContext().Cars.Add(_currentCar);
 
-            try
+            //try
             {
                 CarEntities3.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена!");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message.ToString());
+            //}
         }
 
         private void MouseLeftButtonUp_Click(object sender, MouseButtonEventArgs e)
@@ -88,7 +91,19 @@ namespace MyCar
             //    path += photoName;
             //    File.Copy(ofd.FileName, path);
             //}
-        }       
+            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image (*.png, *.jpg, *.jpeg) |*.png; *.jpg; *.jpeg";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imageData = File.ReadAllBytes(openFileDialog.FileName);
+                PhotoService.Source = new ImageSourceConverter()
+                    .ConvertFrom(imageData) as ImageSource;
+                _currentCar.Photo = imageData;
+            }
+            
+        }        
 
         private void BtnAddPhoto_Click(object sender, RoutedEventArgs e)
         {          

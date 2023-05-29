@@ -23,23 +23,29 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="Марка" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="Модель" FontSize="18" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="Цвет" FontSize="18" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="VIN номер" FontSize="18" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Пробег" FontSize="18" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Кол-во лошадиных сил" FontSize="18" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Регистрационный знак" FontSize="18" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock Text="Фото" Grid.Row="7" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <ComboBox SelectedItem="{Binding Marks}" x:Name="ComboMarks" Grid.Column="1" Height="30" Width="300" HorizontalAlignment="Left"></ComboBox>
-        <ComboBox SelectedItem="{Binding Models}" x:Name="ComboModels" Grid.Column="1" Grid.Row="1" Height="30" Width="300" HorizontalAlignment="Left"></ComboBox>
-        <ComboBox SelectedItem="{Binding Colors}" x:Name="ComboColors" Grid.Column="1" Grid.Row="2" Height="30" Width="300" HorizontalAlignment="Left"></ComboBox>
-        <TextBox Text="{Binding VIN}" Grid.Column="1" Grid.Row="3" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
-        <TextBox Text="{Binding Mileage}" Grid.Column="1" Grid.Row="4" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
-        <TextBox Text="{Binding Horsepower}" Grid.Column="1" Grid.Row="5" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
-        <TextBox Text="{Binding RegisterSign}" Grid.Column="1" Grid.Row="6" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
-        <Image Grid.Column="1" Grid.Row="7" HorizontalAlignment="Left" MouseLeftButtonUp="MouseLeftButtonUp_Click" Name="PhotoService">
+        <TextBlock Text="Тип трансмиссии" FontSize="18" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Год производства" FontSize="18" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="VIN номер" FontSize="18" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Пробег" FontSize="18" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Кол-во лошадиных сил" FontSize="18" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Регистрационный знак" FontSize="18" Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Фото" Grid.Row="9" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <ComboBox SelectedItem="{Binding Marks}" x:Name="ComboMarks" Grid.Column="1" Height="30" Width="300" HorizontalAlignment="Left" DisplayMemberPath="MarkName"></ComboBox>
+        <ComboBox SelectedItem="{Binding Models}" x:Name="ComboModels" Grid.Column="1" Grid.Row="1" Height="30" Width="300" HorizontalAlignment="Left" DisplayMemberPath="ModelName"></ComboBox>
+        <ComboBox SelectedItem="{Binding Colors}" x:Name="ComboColors" Grid.Column="1" Grid.Row="2" Height="30" Width="300" HorizontalAlignment="Left" DisplayMemberPath="ColorName"></ComboBox>
+        <ComboBox SelectedItem="{Binding TransmissionTypes}" x:Name="ComboTransmissionTypes" Grid.Column="1" Grid.Row="3" Height="30" Width="300" HorizontalAlignment="Left" DisplayMemberPath="TransmissionTypeName"></ComboBox>
+        <TextBox Text="{Binding YearOfManufacture}" Grid.Column="1" Grid.Row="4" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding VIN}" Grid.Column="1" Grid.Row="5" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding Mileage}" Grid.Column="1" Grid.Row="6" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding Horsepower}" Grid.Column="1" Grid.Row="7" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding RegisterSign}" Grid.Column="1" Grid.Row="8" Height="30" Width="300" HorizontalAlignment="Left"></TextBox>
+        <Image Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" MouseLeftButtonUp="MouseLeftButtonUp_Click" Name="PhotoService">
             <Image.Source>
                 <Binding Path="Photo">
                     <Binding.TargetNullValue>
@@ -49,7 +55,7 @@
             </Image.Source>
         </Image>
         <!--<Button Content="Добавить фото" Grid.Column="1" Grid.Row="7" Name="BtnAddPhoto" Click="BtnAddPhoto_Click"></Button>-->
-        <TextBox Text="{Binding OwnerId}" Grid.Column="1" Grid.Row="8" Height="30" Width="300" HorizontalAlignment="Left" Name="ownerid" Visibility="Hidden"></TextBox>
-        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="8" Name="BtnSave" Click="BtnSave_Click"></Button>
+        <TextBox Text="{Binding OwnerId}" Grid.Column="1" Grid.Row="9" Height="30" Width="300" HorizontalAlignment="Left" Name="ownerid" Visibility="Hidden"></TextBox>
+        <Button Content="Сохранить" Grid.ColumnSpan="2" Grid.Row="10" Name="BtnSave" Click="BtnSave_Click"></Button>
     </Grid>
 </Page>
