@@ -74,7 +74,6 @@ C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.xml
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\10200282\Downloads\MyCar\MyCar\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.SuggestedBindingRedirects.cache
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarEditPage.g.cs
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarPage.g.cs
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\LoginWindow.g.cs

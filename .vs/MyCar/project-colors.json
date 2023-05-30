@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fc8d80c8-2ca1-4a73-bd08-213fea3afcc9": {
+      "ProjectGuid": "fc8d80c8-2ca1-4a73-bd08-213fea3afcc9",
+      "DisplayName": "MyCar",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

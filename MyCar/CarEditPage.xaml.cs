@@ -27,7 +27,6 @@ namespace MyCar
     public partial class CarEditPage : Page
     {
         byte[] imageData;
-        public string path = System.IO.Path.Combine(Directory.GetParent(System.IO.Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).FullName)).FullName, @"Resources\");
         private Cars _currentCar = new Cars();       
         public CarEditPage(Cars selectedCar, int Id)
         {
@@ -49,12 +48,7 @@ namespace MyCar
         {
             StringBuilder errors = new StringBuilder();
 
-            //if (string.IsNullOrWhiteSpace(_currentCar.Model))
-            //    errors.AppendLine("Укажите модель");
-            //if (string.IsNullOrWhiteSpace(_currentCar.Mark))
-            //    errors.AppendLine("Укажите марку");
-            //if (string.IsNullOrWhiteSpace(_currentCar.Color))
-            //    errors.AppendLine("Укажите цвет");
+            
 
             if (errors.Length > 0)
             {
@@ -65,33 +59,20 @@ namespace MyCar
             if (_currentCar.Id == 0)
                 CarEntities3.GetContext().Cars.Add(_currentCar);
 
-            //try
+            try
             {
                 CarEntities3.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена!");
             }
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message.ToString());
-            //}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void MouseLeftButtonUp_Click(object sender, MouseButtonEventArgs e)
         {
-            //OpenFileDialog ofd = new OpenFileDialog();
-            //ofd.Filter = "Image (*.png, *.jpg, *.jpeg) |*.png; *.jpg; *.jpeg";
-            //if (ofd.ShowDialog() == true)
-            //{
-            //    _mainImageData = File.ReadAllBytes(ofd.FileName);
-            //    ofd.Multiselect = false;
-            //    PhotoService.Source = new ImageSourceConverter()
-            //        .ConvertFrom(_mainImageData) as ImageSource;                
-            //    string photoName = System.IO.Path.GetFileName(ofd.FileName);
-            //    _currentCar.Photo = photoName;
-            //    path += photoName;
-            //    File.Copy(ofd.FileName, path);
-            //}
-            
+                       
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image (*.png, *.jpg, *.jpeg) |*.png; *.jpg; *.jpeg";
             openFileDialog.Multiselect = false;
