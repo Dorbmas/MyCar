@@ -19,8 +19,30 @@ namespace MyCar
         public int MarkId { get; set; }
         public int ModelId { get; set; }
         public int ColorId { get; set; }
+        public string ColorIdString
+        {
+            get
+            {
+                return "Цвет: " + nameColor;
+            }
+        }
         public int YearOfManufacture { get; set; }
+        public string YearOfManufactureString
+        {
+            get
+            {
+                return "Год производства: " + YearOfManufacture;
+            }
+        } 
         public int TransmissionTypeId { get; set; }
+        public string TransmissionTypeIdString
+        {
+            get
+            {
+                return "Тип трансмиссии: " + nameTransmissionType;
+            }
+        }
+                
         public string VIN { get; set; }
         public string Mileage { get; set; }
         public int Horsepower { get; set; }
