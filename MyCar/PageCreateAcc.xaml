@@ -12,29 +12,30 @@
         <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите имя:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="name" Margin="229 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="name" Margin="228 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите фамилию:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="lastname" Margin="181 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="lastname" Margin="180 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите номер и серию паспорта:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="passport" Margin="50 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="passport" Margin="52 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите логин:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="login" Margin="212 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="login" Margin="210 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите пароль:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="password" Margin="203 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="password" Margin="201 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
-                <PasswordBox x:Name="secondpassword" Margin="342 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200" PasswordChanged="PassworBox_PasswordChanged"></PasswordBox>
+                <TextBlock Text="Повторите пароль:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <PasswordBox x:Name="secondpassword" Margin="180 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200" PasswordChanged="PassworBox_PasswordChanged"></PasswordBox>
             </StackPanel>
             <Button Content="Создать" x:Name="BtnCreate" FontSize="20" FontFamily="Times New Roman" Width="150" Margin="5" Background="LightGreen" BorderBrush="Green" Click="BtnCreate_Click" IsEnabled="False"></Button>
-            <Button Content="Назад" x:Name="BtnBack" FontSize="20" FontFamily="Times New Roman" Width="150" Margin="5" Background="Blue" BorderBrush="DarkBlue" Foreground="White" Click="BtnBack_Click"></Button>
+            <Button Content="Назад" x:Name="BtnBack" FontSize="20" FontFamily="Times New Roman" Width="150" Margin="5" Background="Yellow" BorderBrush="Orange" Click="BtnBack_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>
