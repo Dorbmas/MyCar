@@ -10,7 +10,7 @@
       Title="Вход">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" Margin="0, 100, 0, 0">
             <TextBlock Text="Введите логин:" Margin="5" FontSize="20" FontFamily="Times New Roman"></TextBlock>
             <TextBox Margin="5" Width="300" x:Name="login" FontSize="20" FontFamily="Times New Roman"></TextBox>
             <TextBlock Text="Введите пароль:" Margin="5" FontSize="20" FontFamily="Times New Roman"></TextBlock>

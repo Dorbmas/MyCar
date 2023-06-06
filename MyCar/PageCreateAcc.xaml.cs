@@ -20,6 +20,7 @@ namespace MyCar
     /// </summary>
     public partial class PageCreateAcc : Page
     {
+        public Owner _currentOwner = new Owner();
         public PageCreateAcc()
         {
             InitializeComponent();
@@ -27,14 +28,36 @@ namespace MyCar
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
+            StringBuilder errors = new StringBuilder();
+
             if (AppConnect.model0db.Owner.Count(x => x.Login == login.Text) > 0)
             {
                 MessageBox.Show("пользователь с таким логином есть!",
                     "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
+
+            
+
             try
             {
+                if (lastname.Text == "")
+                    errors.AppendLine("Введите фамилию");
+                if (name.Text == "")
+                    errors.AppendLine("Введите имя");
+                if (login.Text == "")
+                    errors.AppendLine("Введите логин");
+                if (password.Text == "")
+                    errors.AppendLine("Введите пароль");
+                if (passport.Text == "")
+                    errors.AppendLine("Введите номер и серию паспорта");
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
                 Owner ownerObj = new Owner()
                 {
                     Name = name.Text,
@@ -42,11 +65,13 @@ namespace MyCar
                     Passport_ID = passport.Text,
                     Login = login.Text,
                     Password = password.Text
-                };
+                };             
+
                 AppConnect.model0db.Owner.Add(ownerObj);
                 AppConnect.model0db.SaveChanges();
                 MessageBox.Show("Данные успешно добавлены!",
                     "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                Manager.MainFrame.GoBack();
             }
             catch
             {

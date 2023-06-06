@@ -9,7 +9,7 @@
       Title="Регистрация">
 
     <Grid>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical" Margin="0, 100, 0, 0" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите имя:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
                 <TextBox x:Name="name" Margin="229 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
@@ -19,7 +19,7 @@
                 <TextBox x:Name="lastname" Margin="181 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="Введите номер и мерию паспорта:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
+                <TextBlock Text="Введите номер и серию паспорта:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
                 <TextBox x:Name="passport" Margin="50 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">

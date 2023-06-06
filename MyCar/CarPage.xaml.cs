@@ -96,5 +96,10 @@ namespace MyCar
             loginWindow.Show();
             Window.GetWindow(this).Close();
         }
+
+        private void BtnMore_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new CarMorePage((sender as Button).DataContext as Cars));
+        }
     }
 }

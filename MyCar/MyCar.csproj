@@ -88,6 +88,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarMorePage.xaml.cs">
+      <DependentUpon>CarMorePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cars.cs">
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
     <Page Include="CarEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarMorePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,12 +212,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\chevroletlacettired.jpg" />
     <Resource Include="Resources\emptycar.png" />
-    <Resource Include="Resources\fordfocusblue.jpg" />
-    <Resource Include="Resources\ladalargusgrey.jpg" />
-    <Resource Include="Resources\nissanskylinewhite.jpg" />
-    <Resource Include="Resources\toyotacorollablack.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

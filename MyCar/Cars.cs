@@ -44,9 +44,37 @@ namespace MyCar
         }
                 
         public string VIN { get; set; }
+        public string VINString
+        {
+            get
+            {
+                return "VIN номер: " + VIN;
+            }
+        }
         public string Mileage { get; set; }
+        public string MileageString
+        {
+            get
+            {
+                return "Пробег: " + Mileage;
+            }
+        }
         public int Horsepower { get; set; }
+        public string HorsepowerString
+        {
+            get
+            {
+                return "Кол-во лошадиных сил: " + Horsepower;
+            }
+        }
         public string RegisterSign { get; set; }
+        public string RegisterSignString
+        {
+            get
+            {
+                return "Номерной знак: " + RegisterSign;
+            }
+        }
         public int OwnerId { get; set; }
         public byte[] Photo { get; set; }
 

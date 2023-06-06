@@ -128,4 +128,6 @@ C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.csproj.CoreCom
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\10200282\Downloads\MyCar (1)\MyCar\MyCar\obj\Debug\MyCar.pdb
-C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csprojAssemblyReference.cache
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarMorePage.g.cs
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\CarMorePage.baml
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.AssemblyReference.cache
