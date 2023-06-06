@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace MyCar
     public partial class PageCreateAcc : Page
     {
         public Owner _currentOwner = new Owner();
+        Regex regex = new Regex(@"^[a-zA-Z\s-]+$");
         public PageCreateAcc()
         {
             InitializeComponent();
@@ -37,20 +39,20 @@ namespace MyCar
                 return;
             }
 
-            
-
             try
             {
-                if (lastname.Text == "")
-                    errors.AppendLine("Введите фамилию");
+                bool isValidLastName = regex.IsMatch(lastname.Text);
+                if (lastname.Text == "" || isValidLastName == false)
+                    errors.AppendLine("Введите корректно фамилию");
+                bool isValidName = regex.IsMatch(name.Text);
                 if (name.Text == "")
-                    errors.AppendLine("Введите имя");
+                    errors.AppendLine("Введите корректно имя");
                 if (login.Text == "")
-                    errors.AppendLine("Введите логин");
+                    errors.AppendLine("Введите корректно логин");
                 if (password.Text == "")
-                    errors.AppendLine("Введите пароль");
+                    errors.AppendLine("Введите корректно пароль");
                 if (passport.Text == "")
-                    errors.AppendLine("Введите номер и серию паспорта");
+                    errors.AppendLine("Введите корректно номер и серию паспорта");
 
                 if (errors.Length > 0)
                 {
