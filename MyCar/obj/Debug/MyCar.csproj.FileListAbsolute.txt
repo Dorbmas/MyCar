@@ -165,3 +165,4 @@ C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CoreCompileInputs.ca
 C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.pdb
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.SuggestedBindingRedirects.cache

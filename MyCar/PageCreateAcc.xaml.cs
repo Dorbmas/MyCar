@@ -34,7 +34,7 @@ namespace MyCar
 
             if (AppConnect.model0db.Owner.Count(x => x.Login == login.Text) > 0)
             {
-                MessageBox.Show("пользователь с таким логином есть!",
+                MessageBox.Show("Пользователь с таким логином есть!",
                     "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
