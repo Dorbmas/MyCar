@@ -166,3 +166,5 @@ C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.CopyComplete
 C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.exe
 C:\Users\kiril\Downloads\MyCar\MyCar\obj\Debug\MyCar.pdb
 C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\MyCar.csproj.SuggestedBindingRedirects.cache
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\EditOwnerPage.g.cs
+C:\Users\10200282\Downloads\MyCar\MyCar\obj\Debug\EditOwnerPage.baml

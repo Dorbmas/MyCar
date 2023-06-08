@@ -20,7 +20,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите номер и серию паспорта:" FontSize="20" FontFamily="Times New Roman"></TextBlock>
-                <TextBox x:Name="passport" Margin="52 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
+                <TextBox x:Name="passport" MaxLength="10" Margin="52 0 0 0" FontSize="20" FontFamily="Times New Roman" Width="200"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Text="Введите логин:" FontSize="20" FontFamily="Times New Roman"></TextBlock>

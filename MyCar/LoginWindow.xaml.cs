@@ -32,13 +32,7 @@ namespace MyCar
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             PageLogin pageLogin = new PageLogin();
-           // pageLogin.TextValueChanged += pageLogin_TextValueChanged;
             FrmMain.Navigate(pageLogin);
-        }
-
-        private void pageLogin_TextValueChanged(int selectedId)
-        {
-            MainWindow mainWindow = new MainWindow(selectedId);
         }
 
         private void Window_Closed(object sender, EventArgs e)

@@ -26,38 +26,41 @@ namespace MyCar
             InitializeComponent();
            
         }
-
-        //public delegate void TextValueChangedHandler(int selectedId);
-        //public event TextValueChangedHandler TextValueChanged;
-
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 int selectedId = 0;
                 var ownerObj = AppConnect.model0db.Owner.FirstOrDefault(x => x.Login == login.Text && x.Password == password.Password);
-                if (ownerObj == null)
+                if(ownerObj != null)
+                {
+                    if (ownerObj.Login.Equals(login.Text) && ownerObj.Password.Equals(password.Password))
+                    {
+                        MessageBox.Show("Добро пожаловать, " + ownerObj.Name + "!",
+                            "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        string textLogin = login.Text;
+                        var currentOwner = CarEntities3.GetContext().Owner.ToList();
+                        currentOwner = currentOwner.Where(x => x.Login == login.Text).ToList();
+                        if (currentOwner.Count > 0)
+                        {
+                            selectedId = currentOwner[0].Id;
+                        }
+
+                        MainWindow mainWindow = new MainWindow(selectedId);
+                        mainWindow.Show();
+                        Window.GetWindow(this).Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации!",
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }               
+                else
                 {
                     MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации!",
                         MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Добро пожаловать, " + ownerObj.Name + "!",
-                        "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    string textLogin = login.Text;
-                    var currentOwner = CarEntities3.GetContext().Owner.ToList();
-                    currentOwner = currentOwner.Where(x => x.Login == login.Text).ToList();
-                    if (currentOwner.Count > 0)
-                    {
-                        selectedId = currentOwner[0].Id;
-                    }
-                                       
-                    MainWindow mainWindow = new MainWindow(selectedId);
-                    mainWindow.Show();                               
-                    Window.GetWindow(this).Close();
-                    
                 }
             }
             catch (Exception ex)

@@ -19,5 +19,6 @@
         <Grid Grid.Row="2" Background="#445c93"></Grid>
         <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered" Grid.Row="1" Name="MainFrame"></Frame>
         <Button Content="Назад" x:Name="BtnBack" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"></Button>
+        <Button Content="Редактировать профиль" x:Name="BtnEditOwner" HorizontalAlignment="Left" Margin="5" Click="BtnEditOwner_Click"></Button>
     </Grid>
 </Window>

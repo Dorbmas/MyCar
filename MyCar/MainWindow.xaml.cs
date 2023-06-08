@@ -20,16 +20,13 @@ namespace MyCar
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private string textLogin;
         private int selectedId1;
         public MainWindow(int selectedId)
         {
             InitializeComponent();
             selectedId1 = selectedId;
             MainFrame.Navigate(new CarPage(selectedId1));
-            Manager.MainFrame = MainFrame;
-            selectedId1 = selectedId;
-            
+            Manager.MainFrame = MainFrame;                     
         }
 
         public object PageLogin { get; internal set; }
@@ -44,10 +41,12 @@ namespace MyCar
             if (MainFrame.CanGoBack)
             {
                 BtnBack.Visibility = Visibility.Visible;
+                BtnEditOwner.Visibility = Visibility.Hidden;
             }
             else
             {
                 BtnBack.Visibility= Visibility.Hidden;
+                BtnEditOwner.Visibility = Visibility.Visible;
             }
         }
 
@@ -59,7 +58,12 @@ namespace MyCar
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            //Application.Current.Shutdown();
+            
+        }
+
+        private void BtnEditOwner_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new EditOwnerPage((sender as Button).DataContext as Owner, selectedId1));
         }
     }
 }

@@ -97,6 +97,9 @@
     <Compile Include="Colors.cs">
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditOwnerPage.xaml.cs">
+      <DependentUpon>EditOwnerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Marks.cs">
       <DependentUpon>CarModel.tt</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditOwnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

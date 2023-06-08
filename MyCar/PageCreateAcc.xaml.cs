@@ -22,7 +22,8 @@ namespace MyCar
     public partial class PageCreateAcc : Page
     {
         public Owner _currentOwner = new Owner();
-        Regex regex = new Regex(@"^[a-zA-Z\s-]+$");
+        Regex regex = new Regex(@"^[а-яА-Я\s-]+$");
+        Regex regex1 = new Regex(@"^[0-9\s-]+$");
         public PageCreateAcc()
         {
             InitializeComponent();
@@ -45,13 +46,14 @@ namespace MyCar
                 if (lastname.Text == "" || isValidLastName == false)
                     errors.AppendLine("Введите корректно фамилию");
                 bool isValidName = regex.IsMatch(name.Text);
-                if (name.Text == "")
+                if (name.Text == "" || isValidName == false)
                     errors.AppendLine("Введите корректно имя");
                 if (login.Text == "")
-                    errors.AppendLine("Введите корректно логин");
+                    errors.AppendLine("Введите логин");
                 if (password.Text == "")
-                    errors.AppendLine("Введите корректно пароль");
-                if (passport.Text == "")
+                    errors.AppendLine("Введите пароль");
+                bool isValidPassport_ID = regex1.IsMatch(passport.Text);
+                if (passport.Text == "" || isValidPassport_ID == false)
                     errors.AppendLine("Введите корректно номер и серию паспорта");
 
                 if (errors.Length > 0)
